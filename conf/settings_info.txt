@@ -1,0 +1,64 @@
+{
+    "server":{
+       -------Адрес БД ГИС
+       "gis_bd":{ 
+          "username":"gis_mrg", 
+          "password":"gis_mrg",
+          "service_name":"GIS_MRG_TEST",
+          "ip":"172.16.200.248"
+       },
+       "portal":{
+          -------Адрес портала: "192.168.0.1:10"
+          "ip":"90.154.104.142:20001",
+          -------Имя приложения ГИС в портале
+          "application":"GIS"
+       }
+    },
+    -------Настройка обычного теста
+    "test_settings":{
+       -------Тип теста. 1 - тест загрузки данных из файла и проверки их в бд, 2 - генерация тестовых случаев и проверка их в базе, 3 - все сразу
+       "type_of_test":1,
+       -------Параметр отправки json. 1 - загружать json 0 - нет. 0 используется в том случае, 
+              когда данные уже были загружены и надо проверить загрузку. 0 используется только при type_of_test = 1
+              если type_of_test != 1 то поставить 1
+       "load_json":0
+    },
+    -------Настройка расположения, имяни и колличества файлов при загрузке из json type_of_test = 1
+           Формат имени файла "file_name (n).json" где n порядковый номер файла начиная с 1. Пример: "setAccount (1).json"
+           file_name - имя файла для сервиса Х 
+           count_file - количество файлов (пачек)
+    "test_load_file":{
+        "setAccount":{
+            "file_name":"setAccount",
+            "count_file":1
+        },
+        "setContract":{
+            "file_name":"setContract",
+            "count_file":1
+        },
+        "setAddrObjData":{
+            "file_name":"setAddrObjData",
+            "count_file":1
+        },
+        "setHouseObjData":{
+            "file_name":"setHouseObjData",
+            "count_file":1
+        },
+        "setMeteringDevice":{
+            "file_name":"setMeteringDevice",
+            "count_file":7
+        },
+        "setMeteringDeviceValues":{
+            "file_name":"setMeteringDeviceValues",
+            "count_file":7
+        },
+        "setChargeDocument":{
+            "file_name":"setChargeDocument",
+            "count_file":13
+        },
+        "setPayments":{
+            "file_name":"setPayments",
+            "count_file":1
+        }
+    }
+ }
